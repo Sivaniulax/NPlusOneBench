@@ -11,3 +11,5 @@ Running notes for the Medium post: decisions, surprises, numbers. Add a dated en
 - Open question: is a raw SQL fragment inside an ActiveRecord call (`.select("SUM(CASE ...)")`) valid ORM code? Leaning: allow it, but log it as "SQL fallback".
 - Load script now runs `ANALYZE` after loading, so EXPLAIN costs are realistic. Schema extraction also records indexes and checks Postgres row counts against SQLite to catch partial loads.
 - Profiling numbers come from `scripts/05_profile_data.py` and are saved in `data/processed/data_profile.json`, so every number here can be reproduced.
+- First real load: 75 tables, 1023 MB in Postgres. The 99 "errors" were all `ALTER ... OWNER TO xiaolongli`, the dump author's own role. Harmless, but it looks alarming in the log, so the script now reports it separately.
+- Python 3.14 on the new Ubuntu broke an older `psycopg` pin (no wheel). Pin versions, but check that they still install on the current interpreter.

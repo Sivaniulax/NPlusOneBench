@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.1.1 (2026-10-19): Data phase fixes after first real run
+
+### Fixed
+- `psycopg[binary]` pinned to 3.3.5. The old pin (3.2.3) has no wheel for Python 3.14, which WSL Ubuntu ships, so it never installed and `03_extract_schema.py` crashed with `ModuleNotFoundError`.
+- `run_data_pipeline.sh` now re-syncs `requirements.txt` on every run and stops early if `psycopg` won't import. Before, it skipped setup whenever `.venv` existed, even a broken one.
+- Load report now separates the 99 harmless `role "xiaolongli" does not exist` errors from real ones. They come from the dump's `ALTER ... OWNER TO` lines; all 75 tables loaded (1023 MB).
+
+### Changed
+- `01_download.sh` skips unzipping if the files are already extracted.
+- `02_load_postgres.sh` keeps an already-loaded `bird` database instead of reloading it every run. `FORCE_RELOAD=1` forces a reload.
+
 ## 0.1.0 (2026-10-19): Data phase
 
 ### Added

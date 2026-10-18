@@ -9,8 +9,12 @@ if [ ! -f data/raw/minidev.zip ]; then
   echo "Downloading $URL ..."
   curl -L --fail -o data/raw/minidev.zip "$URL"
 fi
-echo "Unzipping ..."
-unzip -q -o data/raw/minidev.zip -d data/raw/
+if [ -z "$(find data/raw -path '*MINIDEV_postgresql*' -name 'BIRD_dev.sql' 2>/dev/null)" ]; then
+  echo "Unzipping ..."
+  unzip -q -o data/raw/minidev.zip -d data/raw/
+else
+  echo "Already unzipped, skipping."
+fi
 echo "Done. Key files:"
 find data/raw -name 'BIRD_dev.sql' -o -name 'mini_dev_postgresql.json' -o -name 'mini_dev_pg*.json' | head
 echo "SQLite DBs: $(find data/raw -name '*.sqlite' | wc -l) (expected 11)"
