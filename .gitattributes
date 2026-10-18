@@ -1,0 +1,5 @@
+# Keep Unix line endings so the bash scripts still run in WSL after a
+# checkout on Windows (CRLF breaks `#!/usr/bin/env bash`).
+* text=auto eol=lf
+*.zip binary
+*.sqlite binary

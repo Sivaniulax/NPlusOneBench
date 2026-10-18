@@ -1,0 +1,8 @@
+# raw downloads are large and re-creatable with scripts/01_download.sh
+data/raw/
+*.zip
+.venv/
+__pycache__/
+.env
+# machine-specific load output
+data/processed/load_log.txt

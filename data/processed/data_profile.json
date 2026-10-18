@@ -1,0 +1,138 @@
+{
+  "questions": 500,
+  "with_evidence": 498,
+  "difficulty": {
+    "simple": 148,
+    "moderate": 250,
+    "challenging": 102
+  },
+  "per_database": {
+    "formula_1": 66,
+    "superhero": 52,
+    "card_games": 52,
+    "european_football_2": 51,
+    "thrombosis_prediction": 50,
+    "codebase_community": 49,
+    "student_club": 48,
+    "toxicology": 40,
+    "financial": 32,
+    "debit_card_specializing": 30,
+    "california_schools": 30
+  },
+  "sql_feature_pct": {
+    "join": 81.4,
+    "multi_join": 20.6,
+    "aggregate": 50.8,
+    "cast": 23.0,
+    "limit": 20.2,
+    "case_when": 19.0,
+    "distinct": 16.6,
+    "subquery": 13.2,
+    "group_by": 11.4,
+    "window": 1.0
+  },
+  "avg_joins_by_difficulty": {
+    "simple": 0.68,
+    "moderate": 1.15,
+    "challenging": 1.39
+  },
+  "databases": {
+    "california_schools": {
+      "tables": 3,
+      "foreign_keys": 2,
+      "rows": 29941,
+      "biggest_table": "schools",
+      "biggest_rows": 17686,
+      "tables_without_pk": []
+    },
+    "card_games": {
+      "tables": 6,
+      "foreign_keys": 4,
+      "rows": 803445,
+      "biggest_table": "legalities",
+      "biggest_rows": 427907,
+      "tables_without_pk": []
+    },
+    "codebase_community": {
+      "tables": 8,
+      "foreign_keys": 13,
+      "rows": 740646,
+      "biggest_table": "postHistory",
+      "biggest_rows": 303155,
+      "tables_without_pk": []
+    },
+    "debit_card_specializing": {
+      "tables": 5,
+      "foreign_keys": 2,
+      "rows": 423050,
+      "biggest_table": "yearmonth",
+      "biggest_rows": 383282,
+      "tables_without_pk": []
+    },
+    "european_football_2": {
+      "tables": 7,
+      "foreign_keys": 31,
+      "rows": 222796,
+      "biggest_table": "Player_Attributes",
+      "biggest_rows": 183978,
+      "tables_without_pk": []
+    },
+    "financial": {
+      "tables": 8,
+      "foreign_keys": 8,
+      "rows": 1079680,
+      "biggest_table": "trans",
+      "biggest_rows": 1056320,
+      "tables_without_pk": []
+    },
+    "formula_1": {
+      "tables": 13,
+      "foreign_keys": 19,
+      "rows": 493257,
+      "biggest_table": "lapTimes",
+      "biggest_rows": 400524,
+      "tables_without_pk": []
+    },
+    "student_club": {
+      "tables": 8,
+      "foreign_keys": 8,
+      "rows": 42511,
+      "biggest_table": "zip_code",
+      "biggest_rows": 41877,
+      "tables_without_pk": []
+    },
+    "superhero": {
+      "tables": 10,
+      "foreign_keys": 11,
+      "rows": 10614,
+      "biggest_table": "hero_power",
+      "biggest_rows": 5825,
+      "tables_without_pk": [
+        "hero_attribute",
+        "hero_power"
+      ]
+    },
+    "thrombosis_prediction": {
+      "tables": 3,
+      "foreign_keys": 2,
+      "rows": 15252,
+      "biggest_table": "Laboratory",
+      "biggest_rows": 13908,
+      "tables_without_pk": [
+        "Examination"
+      ]
+    },
+    "toxicology": {
+      "tables": 4,
+      "foreign_keys": 5,
+      "rows": 36922,
+      "biggest_table": "connected",
+      "biggest_rows": 18312,
+      "tables_without_pk": []
+    }
+  },
+  "totals": {
+    "foreign_keys": 105,
+    "rows": 3898114
+  }
+}
