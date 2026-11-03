@@ -1,0 +1,6806 @@
+{
+  "pg_fk_constraints": 87,
+  "databases": {
+    "california_schools": {
+      "frpm": {
+        "sqlite_name": "frpm",
+        "columns": [
+          {
+            "name": "cdscode",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "Academic Year",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "County Code",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "District Code",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "School Code",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "County Name",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "District Name",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "School Name",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "District Type",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "School Type",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "Educational Option Type",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "NSLP Provision Status",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "Charter School (Y/N)",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "Charter School Number",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "Charter Funding Type",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "irc",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "Low Grade",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "High Grade",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "Enrollment (K-12)",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "Free Meal Count (K-12)",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "Percent (%) Eligible Free (K-12)",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "FRPM Count (K-12)",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "Percent (%) Eligible FRPM (K-12)",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "Enrollment (Ages 5-17)",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "Free Meal Count (Ages 5-17)",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "Percent (%) Eligible Free (Ages 5-17)",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "FRPM Count (Ages 5-17)",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "Percent (%) Eligible FRPM (Ages 5-17)",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "2013-14 CALPADS Fall 1 Certification Status",
+            "type": "bigint",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [],
+        "pg_indexes": [
+          {
+            "name": "idx_48496_sqlite_autoindex_frpm_1",
+            "definition": "CREATE UNIQUE INDEX idx_48496_sqlite_autoindex_frpm_1 ON public.frpm USING btree (cdscode)"
+          }
+        ],
+        "pg_foreign_keys": [
+          {
+            "column": "cdscode",
+            "ref_table": "schools",
+            "ref_column": "cdscode"
+          }
+        ],
+        "pg_rows": 9986,
+        "sqlite_pk": [
+          "CDSCode"
+        ],
+        "foreign_keys": [
+          {
+            "column": "CDSCode",
+            "ref_table": "schools",
+            "ref_column": "CDSCode",
+            "ref_table_pg": "schools"
+          }
+        ],
+        "sqlite_rows": 9986
+      },
+      "satscores": {
+        "sqlite_name": "satscores",
+        "columns": [
+          {
+            "name": "cds",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "rtype",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "sname",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "dname",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "cname",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "enroll12",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "numtsttakr",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "avgscrread",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "avgscrmath",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "avgscrwrite",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "numge1500",
+            "type": "bigint",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "cds"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_48501_sqlite_autoindex_satscores_1",
+            "definition": "CREATE UNIQUE INDEX idx_48501_sqlite_autoindex_satscores_1 ON public.satscores USING btree (cds)"
+          }
+        ],
+        "pg_foreign_keys": [
+          {
+            "column": "cds",
+            "ref_table": "schools",
+            "ref_column": "cdscode"
+          }
+        ],
+        "pg_rows": 2269,
+        "sqlite_pk": [
+          "cds"
+        ],
+        "foreign_keys": [
+          {
+            "column": "cds",
+            "ref_table": "schools",
+            "ref_column": "CDSCode",
+            "ref_table_pg": "schools"
+          }
+        ],
+        "sqlite_rows": 2269
+      },
+      "schools": {
+        "sqlite_name": "schools",
+        "columns": [
+          {
+            "name": "cdscode",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "ncesdist",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "ncesschool",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "statustype",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "county",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "district",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "school",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "street",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "streetabr",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "city",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "zip",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "state",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "mailstreet",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "mailstrabr",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "mailcity",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "mailzip",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "mailstate",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "phone",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "ext",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "website",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "opendate",
+            "type": "date",
+            "nullable": true
+          },
+          {
+            "name": "closeddate",
+            "type": "date",
+            "nullable": true
+          },
+          {
+            "name": "charter",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "charternum",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "fundingtype",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "doc",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "doctype",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "soc",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "soctype",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "edopscode",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "edopsname",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "eilcode",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "eilname",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "gsoffered",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "gsserved",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "virtual",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "magnet",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "latitude",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "longitude",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "admfname1",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "admlname1",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "admemail1",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "admfname2",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "admlname2",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "admemail2",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "admfname3",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "admlname3",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "admemail3",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "lastupdate",
+            "type": "date",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [],
+        "pg_indexes": [
+          {
+            "name": "idx_48506_sqlite_autoindex_schools_1",
+            "definition": "CREATE UNIQUE INDEX idx_48506_sqlite_autoindex_schools_1 ON public.schools USING btree (cdscode)"
+          }
+        ],
+        "pg_foreign_keys": [],
+        "pg_rows": 17686,
+        "sqlite_pk": [
+          "CDSCode"
+        ],
+        "foreign_keys": [],
+        "sqlite_rows": 17686
+      }
+    },
+    "card_games": {
+      "cards": {
+        "sqlite_name": "cards",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "artist",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "asciiname",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "availability",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "bordercolor",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "cardkingdomfoilid",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "cardkingdomid",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "coloridentity",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "colorindicator",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "colors",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "convertedmanacost",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "dueldeck",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "edhrecrank",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "faceconvertedmanacost",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "facename",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "flavorname",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "flavortext",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "frameeffects",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "frameversion",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "hand",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "hasalternativedecklimit",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "hascontentwarning",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "hasfoil",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "hasnonfoil",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "isalternative",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "isfullart",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "isonlineonly",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "isoversized",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "ispromo",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "isreprint",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "isreserved",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "isstarter",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "isstoryspotlight",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "istextless",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "istimeshifted",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "keywords",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "layout",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "leadershipskills",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "life",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "loyalty",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "manacost",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "mcmid",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "mcmmetaid",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "mtgarenaid",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "mtgjsonv4id",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "mtgofoilid",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "mtgoid",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "multiverseid",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "name",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "number",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "originalreleasedate",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "originaltext",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "originaltype",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "otherfaceids",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "power",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "printings",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "promotypes",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "purchaseurls",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "rarity",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "scryfallid",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "scryfallillustrationid",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "scryfalloracleid",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "setcode",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "side",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "subtypes",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "supertypes",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "tcgplayerproductid",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "text",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "toughness",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "type",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "types",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "uuid",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "variations",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "watermark",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_48549_cards_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_48549_cards_pkey ON public.cards USING btree (id)"
+          },
+          {
+            "name": "idx_48549_sqlite_autoindex_cards_1",
+            "definition": "CREATE UNIQUE INDEX idx_48549_sqlite_autoindex_cards_1 ON public.cards USING btree (uuid)"
+          }
+        ],
+        "pg_foreign_keys": [],
+        "pg_rows": 56822,
+        "sqlite_pk": [
+          "id"
+        ],
+        "foreign_keys": [],
+        "sqlite_rows": 56822
+      },
+      "foreign_data": {
+        "sqlite_name": "foreign_data",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "flavortext",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "language",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "multiverseid",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "name",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "text",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "type",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "uuid",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_48571_foreign_data_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_48571_foreign_data_pkey ON public.foreign_data USING btree (id)"
+          }
+        ],
+        "pg_foreign_keys": [],
+        "pg_rows": 229186,
+        "sqlite_pk": [
+          "id"
+        ],
+        "foreign_keys": [
+          {
+            "column": "uuid",
+            "ref_table": "cards",
+            "ref_column": "uuid",
+            "ref_table_pg": "cards"
+          }
+        ],
+        "sqlite_rows": 229186
+      },
+      "legalities": {
+        "sqlite_name": "legalities",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "format",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "status",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "uuid",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_48578_legalities_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_48578_legalities_pkey ON public.legalities USING btree (id)"
+          }
+        ],
+        "pg_foreign_keys": [],
+        "pg_rows": 427907,
+        "sqlite_pk": [
+          "id"
+        ],
+        "foreign_keys": [
+          {
+            "column": "uuid",
+            "ref_table": "cards",
+            "ref_column": "uuid",
+            "ref_table_pg": "cards"
+          }
+        ],
+        "sqlite_rows": 427907
+      },
+      "sets": {
+        "sqlite_name": "sets",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "basesetsize",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "block",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "booster",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "code",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "isfoilonly",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "isforeignonly",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "isnonfoilonly",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "isonlineonly",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "ispartialpreview",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "keyrunecode",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "mcmid",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "mcmidextras",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "mcmname",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "mtgocode",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "name",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "parentcode",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "releasedate",
+            "type": "date",
+            "nullable": true
+          },
+          {
+            "name": "tcgplayergroupid",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "totalsetsize",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "type",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_48585_sets_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_48585_sets_pkey ON public.sets USING btree (id)"
+          },
+          {
+            "name": "idx_48585_sqlite_autoindex_sets_1",
+            "definition": "CREATE UNIQUE INDEX idx_48585_sqlite_autoindex_sets_1 ON public.sets USING btree (code)"
+          }
+        ],
+        "pg_foreign_keys": [],
+        "pg_rows": 551,
+        "sqlite_pk": [
+          "id"
+        ],
+        "foreign_keys": [],
+        "sqlite_rows": 551
+      },
+      "set_translations": {
+        "sqlite_name": "set_translations",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "language",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "setcode",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "translation",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_48597_set_translations_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_48597_set_translations_pkey ON public.set_translations USING btree (id)"
+          }
+        ],
+        "pg_foreign_keys": [
+          {
+            "column": "setcode",
+            "ref_table": "sets",
+            "ref_column": "code"
+          }
+        ],
+        "pg_rows": 1210,
+        "sqlite_pk": [
+          "id"
+        ],
+        "foreign_keys": [
+          {
+            "column": "setCode",
+            "ref_table": "sets",
+            "ref_column": "code",
+            "ref_table_pg": "sets"
+          }
+        ],
+        "sqlite_rows": 1210
+      },
+      "rulings": {
+        "sqlite_name": "rulings",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "date",
+            "type": "date",
+            "nullable": true
+          },
+          {
+            "name": "text",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "uuid",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_48604_rulings_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_48604_rulings_pkey ON public.rulings USING btree (id)"
+          }
+        ],
+        "pg_foreign_keys": [
+          {
+            "column": "uuid",
+            "ref_table": "cards",
+            "ref_column": "uuid"
+          }
+        ],
+        "pg_rows": 87769,
+        "sqlite_pk": [
+          "id"
+        ],
+        "foreign_keys": [
+          {
+            "column": "uuid",
+            "ref_table": "cards",
+            "ref_column": "uuid",
+            "ref_table_pg": "cards"
+          }
+        ],
+        "sqlite_rows": 87769
+      }
+    },
+    "codebase_community": {
+      "badges": {
+        "sqlite_name": "badges",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "userid",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "name",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "date",
+            "type": "timestamp with time zone",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_86323_badges_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_86323_badges_pkey ON public.badges USING btree (id)"
+          }
+        ],
+        "pg_foreign_keys": [
+          {
+            "column": "userid",
+            "ref_table": "users",
+            "ref_column": "id"
+          }
+        ],
+        "pg_rows": 79851,
+        "sqlite_pk": [
+          "Id"
+        ],
+        "foreign_keys": [
+          {
+            "column": "UserId",
+            "ref_table": "users",
+            "ref_column": "Id",
+            "ref_table_pg": "users"
+          }
+        ],
+        "sqlite_rows": 79851
+      },
+      "comments": {
+        "sqlite_name": "comments",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "postid",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "score",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "text",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "creationdate",
+            "type": "timestamp with time zone",
+            "nullable": true
+          },
+          {
+            "name": "userid",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "userdisplayname",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_86328_comments_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_86328_comments_pkey ON public.comments USING btree (id)"
+          }
+        ],
+        "pg_foreign_keys": [
+          {
+            "column": "userid",
+            "ref_table": "users",
+            "ref_column": "id"
+          }
+        ],
+        "pg_rows": 174285,
+        "sqlite_pk": [
+          "Id"
+        ],
+        "foreign_keys": [
+          {
+            "column": "UserId",
+            "ref_table": "users",
+            "ref_column": "Id",
+            "ref_table_pg": "users"
+          },
+          {
+            "column": "PostId",
+            "ref_table": "posts",
+            "ref_column": "Id",
+            "ref_table_pg": "posts"
+          }
+        ],
+        "sqlite_rows": 174285
+      },
+      "posthistory": {
+        "sqlite_name": "postHistory",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "posthistorytypeid",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "postid",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "revisionguid",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "creationdate",
+            "type": "timestamp with time zone",
+            "nullable": true
+          },
+          {
+            "name": "userid",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "text",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "comment",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "userdisplayname",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_86333_posthistory_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_86333_posthistory_pkey ON public.posthistory USING btree (id)"
+          },
+          {
+            "name": "idx_86333_sqlite_autoindex_posthistory_1",
+            "definition": "CREATE UNIQUE INDEX idx_86333_sqlite_autoindex_posthistory_1 ON public.posthistory USING btree (id)"
+          }
+        ],
+        "pg_foreign_keys": [
+          {
+            "column": "userid",
+            "ref_table": "users",
+            "ref_column": "id"
+          }
+        ],
+        "pg_rows": 303155,
+        "sqlite_pk": [
+          "Id"
+        ],
+        "foreign_keys": [
+          {
+            "column": "UserId",
+            "ref_table": "users",
+            "ref_column": "Id",
+            "ref_table_pg": "users"
+          },
+          {
+            "column": "PostId",
+            "ref_table": "posts",
+            "ref_column": "Id",
+            "ref_table_pg": "posts"
+          }
+        ],
+        "sqlite_rows": 303155
+      },
+      "postlinks": {
+        "sqlite_name": "postLinks",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "creationdate",
+            "type": "timestamp with time zone",
+            "nullable": true
+          },
+          {
+            "name": "postid",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "relatedpostid",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "linktypeid",
+            "type": "bigint",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_86338_postlinks_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_86338_postlinks_pkey ON public.postlinks USING btree (id)"
+          }
+        ],
+        "pg_foreign_keys": [],
+        "pg_rows": 11102,
+        "sqlite_pk": [
+          "Id"
+        ],
+        "foreign_keys": [
+          {
+            "column": "RelatedPostId",
+            "ref_table": "posts",
+            "ref_column": "Id",
+            "ref_table_pg": "posts"
+          },
+          {
+            "column": "PostId",
+            "ref_table": "posts",
+            "ref_column": "Id",
+            "ref_table_pg": "posts"
+          }
+        ],
+        "sqlite_rows": 11102
+      },
+      "posts": {
+        "sqlite_name": "posts",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "posttypeid",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "acceptedanswerid",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "creaiondate",
+            "type": "timestamp with time zone",
+            "nullable": true
+          },
+          {
+            "name": "score",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "viewcount",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "body",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "owneruserid",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "lasactivitydate",
+            "type": "timestamp with time zone",
+            "nullable": true
+          },
+          {
+            "name": "title",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "tags",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "answercount",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "commentcount",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "favoritecount",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "lasteditoruserid",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "lasteditdate",
+            "type": "timestamp with time zone",
+            "nullable": true
+          },
+          {
+            "name": "communityowneddate",
+            "type": "timestamp with time zone",
+            "nullable": true
+          },
+          {
+            "name": "parentid",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "closeddate",
+            "type": "timestamp with time zone",
+            "nullable": true
+          },
+          {
+            "name": "ownerdisplayname",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "lasteditordisplayname",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_86341_posts_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_86341_posts_pkey ON public.posts USING btree (id)"
+          },
+          {
+            "name": "idx_86341_sqlite_autoindex_posts_1",
+            "definition": "CREATE UNIQUE INDEX idx_86341_sqlite_autoindex_posts_1 ON public.posts USING btree (id)"
+          }
+        ],
+        "pg_foreign_keys": [
+          {
+            "column": "lasteditoruserid",
+            "ref_table": "users",
+            "ref_column": "id"
+          },
+          {
+            "column": "owneruserid",
+            "ref_table": "users",
+            "ref_column": "id"
+          }
+        ],
+        "pg_rows": 91966,
+        "sqlite_pk": [
+          "Id"
+        ],
+        "foreign_keys": [
+          {
+            "column": "ParentId",
+            "ref_table": "posts",
+            "ref_column": "Id",
+            "ref_table_pg": "posts"
+          },
+          {
+            "column": "OwnerUserId",
+            "ref_table": "users",
+            "ref_column": "Id",
+            "ref_table_pg": "users"
+          },
+          {
+            "column": "LastEditorUserId",
+            "ref_table": "users",
+            "ref_column": "Id",
+            "ref_table_pg": "users"
+          }
+        ],
+        "sqlite_rows": 91966
+      },
+      "tags": {
+        "sqlite_name": "tags",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "tagname",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "count",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "excerptpostid",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "wikipostid",
+            "type": "bigint",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_86346_tags_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_86346_tags_pkey ON public.tags USING btree (id)"
+          }
+        ],
+        "pg_foreign_keys": [],
+        "pg_rows": 1032,
+        "sqlite_pk": [
+          "Id"
+        ],
+        "foreign_keys": [
+          {
+            "column": "ExcerptPostId",
+            "ref_table": "posts",
+            "ref_column": "Id",
+            "ref_table_pg": "posts"
+          }
+        ],
+        "sqlite_rows": 1032
+      },
+      "users": {
+        "sqlite_name": "users",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "reputation",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "creationdate",
+            "type": "timestamp with time zone",
+            "nullable": true
+          },
+          {
+            "name": "displayname",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "lastaccessdate",
+            "type": "timestamp with time zone",
+            "nullable": true
+          },
+          {
+            "name": "websiteurl",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "location",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "aboutme",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "views",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "upvotes",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "downvotes",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "accountid",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "age",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "profileimageurl",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_86351_users_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_86351_users_pkey ON public.users USING btree (id)"
+          },
+          {
+            "name": "idx_86351_sqlite_autoindex_users_1",
+            "definition": "CREATE UNIQUE INDEX idx_86351_sqlite_autoindex_users_1 ON public.users USING btree (id)"
+          }
+        ],
+        "pg_foreign_keys": [],
+        "pg_rows": 40325,
+        "sqlite_pk": [
+          "Id"
+        ],
+        "foreign_keys": [],
+        "sqlite_rows": 40325
+      },
+      "votes": {
+        "sqlite_name": "votes",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "postid",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "votetypeid",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "creationdate",
+            "type": "date",
+            "nullable": true
+          },
+          {
+            "name": "userid",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "bountyamount",
+            "type": "bigint",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_86356_votes_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_86356_votes_pkey ON public.votes USING btree (id)"
+          }
+        ],
+        "pg_foreign_keys": [
+          {
+            "column": "postid",
+            "ref_table": "posts",
+            "ref_column": "id"
+          },
+          {
+            "column": "userid",
+            "ref_table": "users",
+            "ref_column": "id"
+          }
+        ],
+        "pg_rows": 38930,
+        "sqlite_pk": [
+          "Id"
+        ],
+        "foreign_keys": [
+          {
+            "column": "UserId",
+            "ref_table": "users",
+            "ref_column": "Id",
+            "ref_table_pg": "users"
+          },
+          {
+            "column": "PostId",
+            "ref_table": "posts",
+            "ref_column": "Id",
+            "ref_table_pg": "posts"
+          }
+        ],
+        "sqlite_rows": 38930
+      }
+    },
+    "debit_card_specializing": {
+      "customers": {
+        "sqlite_name": "customers",
+        "columns": [
+          {
+            "name": "customerid",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "segment",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "currency",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "customerid"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_47287_customers_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_47287_customers_pkey ON public.customers USING btree (customerid)"
+          },
+          {
+            "name": "idx_47287_sqlite_autoindex_customers_1",
+            "definition": "CREATE UNIQUE INDEX idx_47287_sqlite_autoindex_customers_1 ON public.customers USING btree (customerid)"
+          }
+        ],
+        "pg_foreign_keys": [],
+        "pg_rows": 32461,
+        "sqlite_pk": [
+          "CustomerID"
+        ],
+        "foreign_keys": [],
+        "sqlite_rows": 32461
+      },
+      "gasstations": {
+        "sqlite_name": "gasstations",
+        "columns": [
+          {
+            "name": "gasstationid",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "chainid",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "country",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "segment",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "gasstationid"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_47292_gasstations_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_47292_gasstations_pkey ON public.gasstations USING btree (gasstationid)"
+          },
+          {
+            "name": "idx_47292_sqlite_autoindex_gasstations_1",
+            "definition": "CREATE UNIQUE INDEX idx_47292_sqlite_autoindex_gasstations_1 ON public.gasstations USING btree (gasstationid)"
+          }
+        ],
+        "pg_foreign_keys": [],
+        "pg_rows": 5716,
+        "sqlite_pk": [
+          "GasStationID"
+        ],
+        "foreign_keys": [],
+        "sqlite_rows": 5716
+      },
+      "products": {
+        "sqlite_name": "products",
+        "columns": [
+          {
+            "name": "productid",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "description",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "productid"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_47297_products_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_47297_products_pkey ON public.products USING btree (productid)"
+          },
+          {
+            "name": "idx_47297_sqlite_autoindex_products_1",
+            "definition": "CREATE UNIQUE INDEX idx_47297_sqlite_autoindex_products_1 ON public.products USING btree (productid)"
+          }
+        ],
+        "pg_foreign_keys": [],
+        "pg_rows": 591,
+        "sqlite_pk": [
+          "ProductID"
+        ],
+        "foreign_keys": [],
+        "sqlite_rows": 591
+      },
+      "transactions_1k": {
+        "sqlite_name": "transactions_1k",
+        "columns": [
+          {
+            "name": "transactionid",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "date",
+            "type": "date",
+            "nullable": true
+          },
+          {
+            "name": "time",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "customerid",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "cardid",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "gasstationid",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "productid",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "amount",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "price",
+            "type": "real",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "transactionid"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_47303_transactions_1k_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_47303_transactions_1k_pkey ON public.transactions_1k USING btree (transactionid)"
+          }
+        ],
+        "pg_foreign_keys": [],
+        "pg_rows": 1000,
+        "sqlite_pk": [
+          "TransactionID"
+        ],
+        "foreign_keys": [],
+        "sqlite_rows": 1000
+      },
+      "yearmonth": {
+        "sqlite_name": "yearmonth",
+        "columns": [
+          {
+            "name": "customerid",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "date",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "consumption",
+            "type": "real",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [],
+        "pg_indexes": [
+          {
+            "name": "idx_47309_sqlite_autoindex_yearmonth_1",
+            "definition": "CREATE UNIQUE INDEX idx_47309_sqlite_autoindex_yearmonth_1 ON public.yearmonth USING btree (date, customerid)"
+          }
+        ],
+        "pg_foreign_keys": [],
+        "pg_rows": 383282,
+        "sqlite_pk": [
+          "Date",
+          "CustomerID"
+        ],
+        "foreign_keys": [
+          {
+            "column": "CustomerID",
+            "ref_table": "customers",
+            "ref_column": null,
+            "ref_table_pg": "customers"
+          },
+          {
+            "column": "CustomerID",
+            "ref_table": "customers",
+            "ref_column": null,
+            "ref_table_pg": "customers"
+          }
+        ],
+        "sqlite_rows": 383282
+      }
+    },
+    "european_football_2": {
+      "player_attributes": {
+        "sqlite_name": "Player_Attributes",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "player_fifa_api_id",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "player_api_id",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "date",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "overall_rating",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "potential",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "preferred_foot",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "attacking_work_rate",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "defensive_work_rate",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "crossing",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "finishing",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "heading_accuracy",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "short_passing",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "volleys",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "dribbling",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "curve",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "free_kick_accuracy",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "long_passing",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "ball_control",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "acceleration",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "sprint_speed",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "agility",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "reactions",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "balance",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "shot_power",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "jumping",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "stamina",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "strength",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "long_shots",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "aggression",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "interceptions",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "positioning",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "vision",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "penalties",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "marking",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "standing_tackle",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "sliding_tackle",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "gk_diving",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "gk_handling",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "gk_kicking",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "gk_positioning",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "gk_reflexes",
+            "type": "bigint",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_143121_player_attributes_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_143121_player_attributes_pkey ON public.player_attributes USING btree (id)"
+          }
+        ],
+        "pg_foreign_keys": [
+          {
+            "column": "player_api_id",
+            "ref_table": "player",
+            "ref_column": "player_api_id"
+          }
+        ],
+        "pg_rows": 183978,
+        "sqlite_pk": [
+          "id"
+        ],
+        "foreign_keys": [
+          {
+            "column": "player_api_id",
+            "ref_table": "Player",
+            "ref_column": "player_api_id",
+            "ref_table_pg": "player"
+          },
+          {
+            "column": "player_fifa_api_id",
+            "ref_table": "Player",
+            "ref_column": "player_fifa_api_id",
+            "ref_table_pg": "player"
+          }
+        ],
+        "sqlite_rows": 183978
+      },
+      "player": {
+        "sqlite_name": "Player",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "player_api_id",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "player_name",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "player_fifa_api_id",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "birthday",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "height",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "weight",
+            "type": "bigint",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_143128_player_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_143128_player_pkey ON public.player USING btree (id)"
+          },
+          {
+            "name": "idx_143128_sqlite_autoindex_player_1",
+            "definition": "CREATE UNIQUE INDEX idx_143128_sqlite_autoindex_player_1 ON public.player USING btree (player_api_id)"
+          },
+          {
+            "name": "idx_143128_sqlite_autoindex_player_2",
+            "definition": "CREATE UNIQUE INDEX idx_143128_sqlite_autoindex_player_2 ON public.player USING btree (player_fifa_api_id)"
+          }
+        ],
+        "pg_foreign_keys": [],
+        "pg_rows": 11060,
+        "sqlite_pk": [
+          "id"
+        ],
+        "foreign_keys": [],
+        "sqlite_rows": 11060
+      },
+      "league": {
+        "sqlite_name": "League",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "country_id",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "name",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_143135_league_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_143135_league_pkey ON public.league USING btree (id)"
+          },
+          {
+            "name": "idx_143135_sqlite_autoindex_league_1",
+            "definition": "CREATE UNIQUE INDEX idx_143135_sqlite_autoindex_league_1 ON public.league USING btree (name)"
+          }
+        ],
+        "pg_foreign_keys": [],
+        "pg_rows": 11,
+        "sqlite_pk": [
+          "id"
+        ],
+        "foreign_keys": [
+          {
+            "column": "country_id",
+            "ref_table": "country",
+            "ref_column": "id",
+            "ref_table_pg": "country"
+          }
+        ],
+        "sqlite_rows": 11
+      },
+      "country": {
+        "sqlite_name": "Country",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "name",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_143142_country_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_143142_country_pkey ON public.country USING btree (id)"
+          },
+          {
+            "name": "idx_143142_sqlite_autoindex_country_1",
+            "definition": "CREATE UNIQUE INDEX idx_143142_sqlite_autoindex_country_1 ON public.country USING btree (name)"
+          }
+        ],
+        "pg_foreign_keys": [],
+        "pg_rows": 11,
+        "sqlite_pk": [
+          "id"
+        ],
+        "foreign_keys": [],
+        "sqlite_rows": 11
+      },
+      "team": {
+        "sqlite_name": "Team",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "team_api_id",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "team_fifa_api_id",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "team_long_name",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "team_short_name",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_143149_team_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_143149_team_pkey ON public.team USING btree (id)"
+          },
+          {
+            "name": "idx_143149_sqlite_autoindex_team_1",
+            "definition": "CREATE UNIQUE INDEX idx_143149_sqlite_autoindex_team_1 ON public.team USING btree (team_api_id)"
+          }
+        ],
+        "pg_foreign_keys": [],
+        "pg_rows": 299,
+        "sqlite_pk": [
+          "id"
+        ],
+        "foreign_keys": [],
+        "sqlite_rows": 299
+      },
+      "team_attributes": {
+        "sqlite_name": "Team_Attributes",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "team_fifa_api_id",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "team_api_id",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "date",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "buildupplayspeed",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "buildupplayspeedclass",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "buildupplaydribbling",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "buildupplaydribblingclass",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "buildupplaypassing",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "buildupplaypassingclass",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "buildupplaypositioningclass",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "chancecreationpassing",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "chancecreationpassingclass",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "chancecreationcrossing",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "chancecreationcrossingclass",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "chancecreationshooting",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "chancecreationshootingclass",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "chancecreationpositioningclass",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "defencepressure",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "defencepressureclass",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "defenceaggression",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "defenceaggressionclass",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "defenceteamwidth",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "defenceteamwidthclass",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "defencedefenderlineclass",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_143156_team_attributes_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_143156_team_attributes_pkey ON public.team_attributes USING btree (id)"
+          }
+        ],
+        "pg_foreign_keys": [
+          {
+            "column": "team_api_id",
+            "ref_table": "team",
+            "ref_column": "team_api_id"
+          }
+        ],
+        "pg_rows": 1458,
+        "sqlite_pk": [
+          "id"
+        ],
+        "foreign_keys": [
+          {
+            "column": "team_api_id",
+            "ref_table": "Team",
+            "ref_column": "team_api_id",
+            "ref_table_pg": "team"
+          },
+          {
+            "column": "team_fifa_api_id",
+            "ref_table": "Team",
+            "ref_column": "team_fifa_api_id",
+            "ref_table_pg": "team"
+          }
+        ],
+        "sqlite_rows": 1458
+      },
+      "match": {
+        "sqlite_name": "Match",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "country_id",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "league_id",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "season",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "stage",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "date",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "match_api_id",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "home_team_api_id",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "away_team_api_id",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "home_team_goal",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "away_team_goal",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "home_player_x1",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "home_player_x2",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "home_player_x3",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "home_player_x4",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "home_player_x5",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "home_player_x6",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "home_player_x7",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "home_player_x8",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "home_player_x9",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "home_player_x10",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "home_player_x11",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "away_player_x1",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "away_player_x2",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "away_player_x3",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "away_player_x4",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "away_player_x5",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "away_player_x6",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "away_player_x7",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "away_player_x8",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "away_player_x9",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "away_player_x10",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "away_player_x11",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "home_player_y1",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "home_player_y2",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "home_player_y3",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "home_player_y4",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "home_player_y5",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "home_player_y6",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "home_player_y7",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "home_player_y8",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "home_player_y9",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "home_player_y10",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "home_player_y11",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "away_player_y1",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "away_player_y2",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "away_player_y3",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "away_player_y4",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "away_player_y5",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "away_player_y6",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "away_player_y7",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "away_player_y8",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "away_player_y9",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "away_player_y10",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "away_player_y11",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "home_player_1",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "home_player_2",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "home_player_3",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "home_player_4",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "home_player_5",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "home_player_6",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "home_player_7",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "home_player_8",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "home_player_9",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "home_player_10",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "home_player_11",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "away_player_1",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "away_player_2",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "away_player_3",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "away_player_4",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "away_player_5",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "away_player_6",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "away_player_7",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "away_player_8",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "away_player_9",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "away_player_10",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "away_player_11",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "goal",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "shoton",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "shotoff",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "foulcommit",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "card",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "cross",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "corner",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "possession",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "b365h",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "b365d",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "b365a",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "bwh",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "bwd",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "bwa",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "iwh",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "iwd",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "iwa",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "lbh",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "lbd",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "lba",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "psh",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "psd",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "psa",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "whh",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "whd",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "wha",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "sjh",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "sjd",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "sja",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "vch",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "vcd",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "vca",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "gbh",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "gbd",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "gba",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "bsh",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "bsd",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "bsa",
+            "type": "real",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_143163_match_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_143163_match_pkey ON public.match USING btree (id)"
+          },
+          {
+            "name": "idx_143163_sqlite_autoindex_match_1",
+            "definition": "CREATE UNIQUE INDEX idx_143163_sqlite_autoindex_match_1 ON public.match USING btree (match_api_id)"
+          }
+        ],
+        "pg_foreign_keys": [
+          {
+            "column": "away_player_10",
+            "ref_table": "player",
+            "ref_column": "player_api_id"
+          },
+          {
+            "column": "away_player_11",
+            "ref_table": "player",
+            "ref_column": "player_api_id"
+          },
+          {
+            "column": "away_player_1",
+            "ref_table": "player",
+            "ref_column": "player_api_id"
+          },
+          {
+            "column": "away_player_2",
+            "ref_table": "player",
+            "ref_column": "player_api_id"
+          },
+          {
+            "column": "away_player_3",
+            "ref_table": "player",
+            "ref_column": "player_api_id"
+          },
+          {
+            "column": "away_player_4",
+            "ref_table": "player",
+            "ref_column": "player_api_id"
+          },
+          {
+            "column": "away_player_5",
+            "ref_table": "player",
+            "ref_column": "player_api_id"
+          },
+          {
+            "column": "away_player_6",
+            "ref_table": "player",
+            "ref_column": "player_api_id"
+          },
+          {
+            "column": "away_player_7",
+            "ref_table": "player",
+            "ref_column": "player_api_id"
+          },
+          {
+            "column": "away_player_8",
+            "ref_table": "player",
+            "ref_column": "player_api_id"
+          },
+          {
+            "column": "away_player_9",
+            "ref_table": "player",
+            "ref_column": "player_api_id"
+          },
+          {
+            "column": "away_team_api_id",
+            "ref_table": "team",
+            "ref_column": "team_api_id"
+          },
+          {
+            "column": "home_player_10",
+            "ref_table": "player",
+            "ref_column": "player_api_id"
+          },
+          {
+            "column": "home_player_11",
+            "ref_table": "player",
+            "ref_column": "player_api_id"
+          },
+          {
+            "column": "home_player_1",
+            "ref_table": "player",
+            "ref_column": "player_api_id"
+          },
+          {
+            "column": "home_player_2",
+            "ref_table": "player",
+            "ref_column": "player_api_id"
+          },
+          {
+            "column": "home_player_3",
+            "ref_table": "player",
+            "ref_column": "player_api_id"
+          },
+          {
+            "column": "home_player_4",
+            "ref_table": "player",
+            "ref_column": "player_api_id"
+          },
+          {
+            "column": "home_player_5",
+            "ref_table": "player",
+            "ref_column": "player_api_id"
+          },
+          {
+            "column": "home_player_6",
+            "ref_table": "player",
+            "ref_column": "player_api_id"
+          },
+          {
+            "column": "home_player_7",
+            "ref_table": "player",
+            "ref_column": "player_api_id"
+          },
+          {
+            "column": "home_player_8",
+            "ref_table": "player",
+            "ref_column": "player_api_id"
+          },
+          {
+            "column": "home_player_9",
+            "ref_table": "player",
+            "ref_column": "player_api_id"
+          },
+          {
+            "column": "home_team_api_id",
+            "ref_table": "team",
+            "ref_column": "team_api_id"
+          }
+        ],
+        "pg_rows": 25979,
+        "sqlite_pk": [
+          "id"
+        ],
+        "foreign_keys": [
+          {
+            "column": "away_player_11",
+            "ref_table": "Player",
+            "ref_column": "player_api_id",
+            "ref_table_pg": "player"
+          },
+          {
+            "column": "away_player_10",
+            "ref_table": "Player",
+            "ref_column": "player_api_id",
+            "ref_table_pg": "player"
+          },
+          {
+            "column": "away_player_9",
+            "ref_table": "Player",
+            "ref_column": "player_api_id",
+            "ref_table_pg": "player"
+          },
+          {
+            "column": "away_player_8",
+            "ref_table": "Player",
+            "ref_column": "player_api_id",
+            "ref_table_pg": "player"
+          },
+          {
+            "column": "away_player_7",
+            "ref_table": "Player",
+            "ref_column": "player_api_id",
+            "ref_table_pg": "player"
+          },
+          {
+            "column": "away_player_6",
+            "ref_table": "Player",
+            "ref_column": "player_api_id",
+            "ref_table_pg": "player"
+          },
+          {
+            "column": "away_player_5",
+            "ref_table": "Player",
+            "ref_column": "player_api_id",
+            "ref_table_pg": "player"
+          },
+          {
+            "column": "away_player_4",
+            "ref_table": "Player",
+            "ref_column": "player_api_id",
+            "ref_table_pg": "player"
+          },
+          {
+            "column": "away_player_3",
+            "ref_table": "Player",
+            "ref_column": "player_api_id",
+            "ref_table_pg": "player"
+          },
+          {
+            "column": "away_player_2",
+            "ref_table": "Player",
+            "ref_column": "player_api_id",
+            "ref_table_pg": "player"
+          },
+          {
+            "column": "away_player_1",
+            "ref_table": "Player",
+            "ref_column": "player_api_id",
+            "ref_table_pg": "player"
+          },
+          {
+            "column": "home_player_11",
+            "ref_table": "Player",
+            "ref_column": "player_api_id",
+            "ref_table_pg": "player"
+          },
+          {
+            "column": "home_player_10",
+            "ref_table": "Player",
+            "ref_column": "player_api_id",
+            "ref_table_pg": "player"
+          },
+          {
+            "column": "home_player_9",
+            "ref_table": "Player",
+            "ref_column": "player_api_id",
+            "ref_table_pg": "player"
+          },
+          {
+            "column": "home_player_8",
+            "ref_table": "Player",
+            "ref_column": "player_api_id",
+            "ref_table_pg": "player"
+          },
+          {
+            "column": "home_player_7",
+            "ref_table": "Player",
+            "ref_column": "player_api_id",
+            "ref_table_pg": "player"
+          },
+          {
+            "column": "home_player_6",
+            "ref_table": "Player",
+            "ref_column": "player_api_id",
+            "ref_table_pg": "player"
+          },
+          {
+            "column": "home_player_5",
+            "ref_table": "Player",
+            "ref_column": "player_api_id",
+            "ref_table_pg": "player"
+          },
+          {
+            "column": "home_player_4",
+            "ref_table": "Player",
+            "ref_column": "player_api_id",
+            "ref_table_pg": "player"
+          },
+          {
+            "column": "home_player_3",
+            "ref_table": "Player",
+            "ref_column": "player_api_id",
+            "ref_table_pg": "player"
+          },
+          {
+            "column": "home_player_2",
+            "ref_table": "Player",
+            "ref_column": "player_api_id",
+            "ref_table_pg": "player"
+          },
+          {
+            "column": "home_player_1",
+            "ref_table": "Player",
+            "ref_column": "player_api_id",
+            "ref_table_pg": "player"
+          },
+          {
+            "column": "away_team_api_id",
+            "ref_table": "Team",
+            "ref_column": "team_api_id",
+            "ref_table_pg": "team"
+          },
+          {
+            "column": "home_team_api_id",
+            "ref_table": "Team",
+            "ref_column": "team_api_id",
+            "ref_table_pg": "team"
+          },
+          {
+            "column": "league_id",
+            "ref_table": "League",
+            "ref_column": null,
+            "ref_table_pg": "league"
+          },
+          {
+            "column": "country_id",
+            "ref_table": "Country",
+            "ref_column": null,
+            "ref_table_pg": "country"
+          }
+        ],
+        "sqlite_rows": 25979
+      }
+    },
+    "financial": {
+      "account": {
+        "sqlite_name": "account",
+        "columns": [
+          {
+            "name": "account_id",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "district_id",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "frequency",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "date",
+            "type": "date",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "account_id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_17818_account_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_17818_account_pkey ON public.account USING btree (account_id)"
+          }
+        ],
+        "pg_foreign_keys": [
+          {
+            "column": "district_id",
+            "ref_table": "district",
+            "ref_column": "district_id"
+          }
+        ],
+        "pg_rows": 4500,
+        "sqlite_pk": [
+          "account_id"
+        ],
+        "foreign_keys": [
+          {
+            "column": "district_id",
+            "ref_table": "district",
+            "ref_column": "district_id",
+            "ref_table_pg": "district"
+          }
+        ],
+        "sqlite_rows": 4500
+      },
+      "card": {
+        "sqlite_name": "card",
+        "columns": [
+          {
+            "name": "card_id",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "disp_id",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "type",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "issued",
+            "type": "date",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "card_id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_17825_card_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_17825_card_pkey ON public.card USING btree (card_id)"
+          }
+        ],
+        "pg_foreign_keys": [
+          {
+            "column": "disp_id",
+            "ref_table": "disp",
+            "ref_column": "disp_id"
+          }
+        ],
+        "pg_rows": 892,
+        "sqlite_pk": [
+          "card_id"
+        ],
+        "foreign_keys": [
+          {
+            "column": "disp_id",
+            "ref_table": "disp",
+            "ref_column": "disp_id",
+            "ref_table_pg": "disp"
+          }
+        ],
+        "sqlite_rows": 892
+      },
+      "client": {
+        "sqlite_name": "client",
+        "columns": [
+          {
+            "name": "client_id",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "gender",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "birth_date",
+            "type": "date",
+            "nullable": true
+          },
+          {
+            "name": "district_id",
+            "type": "bigint",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "client_id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_17831_client_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_17831_client_pkey ON public.client USING btree (client_id)"
+          }
+        ],
+        "pg_foreign_keys": [
+          {
+            "column": "district_id",
+            "ref_table": "district",
+            "ref_column": "district_id"
+          }
+        ],
+        "pg_rows": 5369,
+        "sqlite_pk": [
+          "client_id"
+        ],
+        "foreign_keys": [
+          {
+            "column": "district_id",
+            "ref_table": "district",
+            "ref_column": "district_id",
+            "ref_table_pg": "district"
+          }
+        ],
+        "sqlite_rows": 5369
+      },
+      "disp": {
+        "sqlite_name": "disp",
+        "columns": [
+          {
+            "name": "disp_id",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "client_id",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "account_id",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "type",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "disp_id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_17836_disp_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_17836_disp_pkey ON public.disp USING btree (disp_id)"
+          }
+        ],
+        "pg_foreign_keys": [
+          {
+            "column": "account_id",
+            "ref_table": "account",
+            "ref_column": "account_id"
+          },
+          {
+            "column": "client_id",
+            "ref_table": "client",
+            "ref_column": "client_id"
+          }
+        ],
+        "pg_rows": 5369,
+        "sqlite_pk": [
+          "disp_id"
+        ],
+        "foreign_keys": [
+          {
+            "column": "client_id",
+            "ref_table": "client",
+            "ref_column": "client_id",
+            "ref_table_pg": "client"
+          },
+          {
+            "column": "account_id",
+            "ref_table": "account",
+            "ref_column": "account_id",
+            "ref_table_pg": "account"
+          }
+        ],
+        "sqlite_rows": 5369
+      },
+      "district": {
+        "sqlite_name": "district",
+        "columns": [
+          {
+            "name": "district_id",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "a2",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "a3",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "a4",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "a5",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "a6",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "a7",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "a8",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "a9",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "a10",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "a11",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "a12",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "a13",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "a14",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "a15",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "a16",
+            "type": "bigint",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "district_id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_17841_district_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_17841_district_pkey ON public.district USING btree (district_id)"
+          }
+        ],
+        "pg_foreign_keys": [],
+        "pg_rows": 77,
+        "sqlite_pk": [
+          "district_id"
+        ],
+        "foreign_keys": [],
+        "sqlite_rows": 77
+      },
+      "loan": {
+        "sqlite_name": "loan",
+        "columns": [
+          {
+            "name": "loan_id",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "account_id",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "date",
+            "type": "date",
+            "nullable": true
+          },
+          {
+            "name": "amount",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "duration",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "payments",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "status",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "loan_id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_17847_loan_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_17847_loan_pkey ON public.loan USING btree (loan_id)"
+          }
+        ],
+        "pg_foreign_keys": [
+          {
+            "column": "account_id",
+            "ref_table": "account",
+            "ref_column": "account_id"
+          }
+        ],
+        "pg_rows": 682,
+        "sqlite_pk": [
+          "loan_id"
+        ],
+        "foreign_keys": [
+          {
+            "column": "account_id",
+            "ref_table": "account",
+            "ref_column": "account_id",
+            "ref_table_pg": "account"
+          }
+        ],
+        "sqlite_rows": 682
+      },
+      "order": {
+        "sqlite_name": "order",
+        "columns": [
+          {
+            "name": "order_id",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "account_id",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "bank_to",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "account_to",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "amount",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "k_symbol",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "order_id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_17853_order_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_17853_order_pkey ON public.\"order\" USING btree (order_id)"
+          }
+        ],
+        "pg_foreign_keys": [
+          {
+            "column": "account_id",
+            "ref_table": "account",
+            "ref_column": "account_id"
+          }
+        ],
+        "pg_rows": 6471,
+        "sqlite_pk": [
+          "order_id"
+        ],
+        "foreign_keys": [
+          {
+            "column": "account_id",
+            "ref_table": "account",
+            "ref_column": "account_id",
+            "ref_table_pg": "account"
+          }
+        ],
+        "sqlite_rows": 6471
+      },
+      "trans": {
+        "sqlite_name": "trans",
+        "columns": [
+          {
+            "name": "trans_id",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "account_id",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "date",
+            "type": "date",
+            "nullable": true
+          },
+          {
+            "name": "type",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "operation",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "amount",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "balance",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "k_symbol",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "bank",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "account",
+            "type": "bigint",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "trans_id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_17859_trans_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_17859_trans_pkey ON public.trans USING btree (trans_id)"
+          }
+        ],
+        "pg_foreign_keys": [
+          {
+            "column": "account_id",
+            "ref_table": "account",
+            "ref_column": "account_id"
+          }
+        ],
+        "pg_rows": 1056320,
+        "sqlite_pk": [
+          "trans_id"
+        ],
+        "foreign_keys": [
+          {
+            "column": "account_id",
+            "ref_table": "account",
+            "ref_column": "account_id",
+            "ref_table_pg": "account"
+          }
+        ],
+        "sqlite_rows": 1056320
+      }
+    },
+    "formula_1": {
+      "circuits": {
+        "sqlite_name": "circuits",
+        "columns": [
+          {
+            "name": "circuitid",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "circuitref",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "name",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "location",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "country",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "lat",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "lng",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "alt",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "url",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "circuitid"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_17559_circuits_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_17559_circuits_pkey ON public.circuits USING btree (circuitid)"
+          },
+          {
+            "name": "idx_17559_sqlite_autoindex_circuits_1",
+            "definition": "CREATE UNIQUE INDEX idx_17559_sqlite_autoindex_circuits_1 ON public.circuits USING btree (url)"
+          }
+        ],
+        "pg_foreign_keys": [],
+        "pg_rows": 72,
+        "sqlite_pk": [
+          "circuitId"
+        ],
+        "foreign_keys": [],
+        "sqlite_rows": 72
+      },
+      "constructors": {
+        "sqlite_name": "constructors",
+        "columns": [
+          {
+            "name": "constructorid",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "constructorref",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "name",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "nationality",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "url",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "constructorid"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_17569_constructors_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_17569_constructors_pkey ON public.constructors USING btree (constructorid)"
+          },
+          {
+            "name": "idx_17569_sqlite_autoindex_constructors_1",
+            "definition": "CREATE UNIQUE INDEX idx_17569_sqlite_autoindex_constructors_1 ON public.constructors USING btree (name)"
+          }
+        ],
+        "pg_foreign_keys": [],
+        "pg_rows": 208,
+        "sqlite_pk": [
+          "constructorId"
+        ],
+        "foreign_keys": [],
+        "sqlite_rows": 208
+      },
+      "drivers": {
+        "sqlite_name": "drivers",
+        "columns": [
+          {
+            "name": "driverid",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "driverref",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "number",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "code",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "forename",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "surname",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "dob",
+            "type": "date",
+            "nullable": true
+          },
+          {
+            "name": "nationality",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "url",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "driverid"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_17579_drivers_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_17579_drivers_pkey ON public.drivers USING btree (driverid)"
+          },
+          {
+            "name": "idx_17579_sqlite_autoindex_drivers_1",
+            "definition": "CREATE UNIQUE INDEX idx_17579_sqlite_autoindex_drivers_1 ON public.drivers USING btree (url)"
+          }
+        ],
+        "pg_foreign_keys": [],
+        "pg_rows": 840,
+        "sqlite_pk": [
+          "driverId"
+        ],
+        "foreign_keys": [],
+        "sqlite_rows": 840
+      },
+      "seasons": {
+        "sqlite_name": "seasons",
+        "columns": [
+          {
+            "name": "year",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "url",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "year"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_17589_seasons_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_17589_seasons_pkey ON public.seasons USING btree (year)"
+          },
+          {
+            "name": "idx_17589_sqlite_autoindex_seasons_1",
+            "definition": "CREATE UNIQUE INDEX idx_17589_sqlite_autoindex_seasons_1 ON public.seasons USING btree (url)"
+          }
+        ],
+        "pg_foreign_keys": [],
+        "pg_rows": 68,
+        "sqlite_pk": [
+          "year"
+        ],
+        "foreign_keys": [],
+        "sqlite_rows": 68
+      },
+      "races": {
+        "sqlite_name": "races",
+        "columns": [
+          {
+            "name": "raceid",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "year",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "round",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "circuitid",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "name",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "date",
+            "type": "date",
+            "nullable": true
+          },
+          {
+            "name": "time",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "url",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "raceid"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_17597_races_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_17597_races_pkey ON public.races USING btree (raceid)"
+          },
+          {
+            "name": "idx_17597_sqlite_autoindex_races_1",
+            "definition": "CREATE UNIQUE INDEX idx_17597_sqlite_autoindex_races_1 ON public.races USING btree (url)"
+          }
+        ],
+        "pg_foreign_keys": [
+          {
+            "column": "circuitid",
+            "ref_table": "circuits",
+            "ref_column": "circuitid"
+          },
+          {
+            "column": "year",
+            "ref_table": "seasons",
+            "ref_column": "year"
+          }
+        ],
+        "pg_rows": 954,
+        "sqlite_pk": [
+          "raceId"
+        ],
+        "foreign_keys": [
+          {
+            "column": "circuitId",
+            "ref_table": "circuits",
+            "ref_column": "circuitId",
+            "ref_table_pg": "circuits"
+          },
+          {
+            "column": "year",
+            "ref_table": "seasons",
+            "ref_column": "year",
+            "ref_table_pg": "seasons"
+          }
+        ],
+        "sqlite_rows": 954
+      },
+      "constructorresults": {
+        "sqlite_name": "constructorResults",
+        "columns": [
+          {
+            "name": "constructorresultsid",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "raceid",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "constructorid",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "points",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "status",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "constructorresultsid"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_17608_constructorresults_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_17608_constructorresults_pkey ON public.constructorresults USING btree (constructorresultsid)"
+          }
+        ],
+        "pg_foreign_keys": [
+          {
+            "column": "constructorid",
+            "ref_table": "constructors",
+            "ref_column": "constructorid"
+          }
+        ],
+        "pg_rows": 11082,
+        "sqlite_pk": [
+          "constructorResultsId"
+        ],
+        "foreign_keys": [
+          {
+            "column": "constructorId",
+            "ref_table": "constructors",
+            "ref_column": "constructorId",
+            "ref_table_pg": "constructors"
+          },
+          {
+            "column": "raceId",
+            "ref_table": "races",
+            "ref_column": "raceId",
+            "ref_table_pg": "races"
+          }
+        ],
+        "sqlite_rows": 11082
+      },
+      "constructorstandings": {
+        "sqlite_name": "constructorStandings",
+        "columns": [
+          {
+            "name": "constructorstandingsid",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "raceid",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "constructorid",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "points",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "position",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "positiontext",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "wins",
+            "type": "bigint",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "constructorstandingsid"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_17617_constructorstandings_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_17617_constructorstandings_pkey ON public.constructorstandings USING btree (constructorstandingsid)"
+          }
+        ],
+        "pg_foreign_keys": [
+          {
+            "column": "constructorid",
+            "ref_table": "constructors",
+            "ref_column": "constructorid"
+          }
+        ],
+        "pg_rows": 11836,
+        "sqlite_pk": [
+          "constructorStandingsId"
+        ],
+        "foreign_keys": [
+          {
+            "column": "constructorId",
+            "ref_table": "constructors",
+            "ref_column": "constructorId",
+            "ref_table_pg": "constructors"
+          },
+          {
+            "column": "raceId",
+            "ref_table": "races",
+            "ref_column": "raceId",
+            "ref_table_pg": "races"
+          }
+        ],
+        "sqlite_rows": 11836
+      },
+      "driverstandings": {
+        "sqlite_name": "driverStandings",
+        "columns": [
+          {
+            "name": "driverstandingsid",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "raceid",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "driverid",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "points",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "position",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "positiontext",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "wins",
+            "type": "bigint",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "driverstandingsid"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_17628_driverstandings_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_17628_driverstandings_pkey ON public.driverstandings USING btree (driverstandingsid)"
+          }
+        ],
+        "pg_foreign_keys": [
+          {
+            "column": "driverid",
+            "ref_table": "drivers",
+            "ref_column": "driverid"
+          }
+        ],
+        "pg_rows": 31578,
+        "sqlite_pk": [
+          "driverStandingsId"
+        ],
+        "foreign_keys": [
+          {
+            "column": "driverId",
+            "ref_table": "drivers",
+            "ref_column": "driverId",
+            "ref_table_pg": "drivers"
+          },
+          {
+            "column": "raceId",
+            "ref_table": "races",
+            "ref_column": "raceId",
+            "ref_table_pg": "races"
+          }
+        ],
+        "sqlite_rows": 31578
+      },
+      "laptimes": {
+        "sqlite_name": "lapTimes",
+        "columns": [
+          {
+            "name": "raceid",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "driverid",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "lap",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "position",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "time",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "milliseconds",
+            "type": "bigint",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "raceid",
+          "driverid",
+          "lap"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_17638_laptimes_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_17638_laptimes_pkey ON public.laptimes USING btree (raceid, driverid, lap)"
+          },
+          {
+            "name": "idx_17638_sqlite_autoindex_laptimes_1",
+            "definition": "CREATE UNIQUE INDEX idx_17638_sqlite_autoindex_laptimes_1 ON public.laptimes USING btree (raceid, driverid, lap)"
+          }
+        ],
+        "pg_foreign_keys": [
+          {
+            "column": "driverid",
+            "ref_table": "drivers",
+            "ref_column": "driverid"
+          },
+          {
+            "column": "raceid",
+            "ref_table": "races",
+            "ref_column": "raceid"
+          }
+        ],
+        "pg_rows": 400524,
+        "sqlite_pk": [
+          "raceId",
+          "driverId",
+          "lap"
+        ],
+        "foreign_keys": [
+          {
+            "column": "driverId",
+            "ref_table": "drivers",
+            "ref_column": "driverId",
+            "ref_table_pg": "drivers"
+          },
+          {
+            "column": "raceId",
+            "ref_table": "races",
+            "ref_column": "raceId",
+            "ref_table_pg": "races"
+          }
+        ],
+        "sqlite_rows": 400524
+      },
+      "pitstops": {
+        "sqlite_name": "pitStops",
+        "columns": [
+          {
+            "name": "raceid",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "driverid",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "stop",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "lap",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "time",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "duration",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "milliseconds",
+            "type": "bigint",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "raceid",
+          "driverid",
+          "stop"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_17643_pitstops_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_17643_pitstops_pkey ON public.pitstops USING btree (raceid, driverid, stop)"
+          },
+          {
+            "name": "idx_17643_sqlite_autoindex_pitstops_1",
+            "definition": "CREATE UNIQUE INDEX idx_17643_sqlite_autoindex_pitstops_1 ON public.pitstops USING btree (raceid, driverid, stop)"
+          }
+        ],
+        "pg_foreign_keys": [
+          {
+            "column": "driverid",
+            "ref_table": "drivers",
+            "ref_column": "driverid"
+          },
+          {
+            "column": "raceid",
+            "ref_table": "races",
+            "ref_column": "raceid"
+          }
+        ],
+        "pg_rows": 5815,
+        "sqlite_pk": [
+          "raceId",
+          "driverId",
+          "stop"
+        ],
+        "foreign_keys": [
+          {
+            "column": "driverId",
+            "ref_table": "drivers",
+            "ref_column": "driverId",
+            "ref_table_pg": "drivers"
+          },
+          {
+            "column": "raceId",
+            "ref_table": "races",
+            "ref_column": "raceId",
+            "ref_table_pg": "races"
+          }
+        ],
+        "sqlite_rows": 5815
+      },
+      "qualifying": {
+        "sqlite_name": "qualifying",
+        "columns": [
+          {
+            "name": "qualifyid",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "raceid",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "driverid",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "constructorid",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "number",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "position",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "q1",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "q2",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "q3",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "qualifyid"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_17649_qualifying_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_17649_qualifying_pkey ON public.qualifying USING btree (qualifyid)"
+          }
+        ],
+        "pg_foreign_keys": [
+          {
+            "column": "constructorid",
+            "ref_table": "constructors",
+            "ref_column": "constructorid"
+          },
+          {
+            "column": "driverid",
+            "ref_table": "drivers",
+            "ref_column": "driverid"
+          },
+          {
+            "column": "raceid",
+            "ref_table": "races",
+            "ref_column": "raceid"
+          }
+        ],
+        "pg_rows": 6967,
+        "sqlite_pk": [
+          "qualifyId"
+        ],
+        "foreign_keys": [
+          {
+            "column": "constructorId",
+            "ref_table": "constructors",
+            "ref_column": "constructorId",
+            "ref_table_pg": "constructors"
+          },
+          {
+            "column": "driverId",
+            "ref_table": "drivers",
+            "ref_column": "driverId",
+            "ref_table_pg": "drivers"
+          },
+          {
+            "column": "raceId",
+            "ref_table": "races",
+            "ref_column": "raceId",
+            "ref_table_pg": "races"
+          }
+        ],
+        "sqlite_rows": 6967
+      },
+      "status": {
+        "sqlite_name": "status",
+        "columns": [
+          {
+            "name": "statusid",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "status",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "statusid"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_17660_status_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_17660_status_pkey ON public.status USING btree (statusid)"
+          }
+        ],
+        "pg_foreign_keys": [],
+        "pg_rows": 134,
+        "sqlite_pk": [
+          "statusId"
+        ],
+        "foreign_keys": [],
+        "sqlite_rows": 134
+      },
+      "results": {
+        "sqlite_name": "results",
+        "columns": [
+          {
+            "name": "resultid",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "raceid",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "driverid",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "constructorid",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "number",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "grid",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "position",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "positiontext",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "positionorder",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "points",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "laps",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "time",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "milliseconds",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "fastestlap",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "rank",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "fastestlaptime",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "fastestlapspeed",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "statusid",
+            "type": "bigint",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "resultid"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_17668_results_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_17668_results_pkey ON public.results USING btree (resultid)"
+          }
+        ],
+        "pg_foreign_keys": [
+          {
+            "column": "constructorid",
+            "ref_table": "constructors",
+            "ref_column": "constructorid"
+          },
+          {
+            "column": "driverid",
+            "ref_table": "drivers",
+            "ref_column": "driverid"
+          },
+          {
+            "column": "raceid",
+            "ref_table": "races",
+            "ref_column": "raceid"
+          },
+          {
+            "column": "statusid",
+            "ref_table": "status",
+            "ref_column": "statusid"
+          }
+        ],
+        "pg_rows": 23179,
+        "sqlite_pk": [
+          "resultId"
+        ],
+        "foreign_keys": [
+          {
+            "column": "statusId",
+            "ref_table": "status",
+            "ref_column": "statusId",
+            "ref_table_pg": "status"
+          },
+          {
+            "column": "constructorId",
+            "ref_table": "constructors",
+            "ref_column": "constructorId",
+            "ref_table_pg": "constructors"
+          },
+          {
+            "column": "driverId",
+            "ref_table": "drivers",
+            "ref_column": "driverId",
+            "ref_table_pg": "drivers"
+          },
+          {
+            "column": "raceId",
+            "ref_table": "races",
+            "ref_column": "raceId",
+            "ref_table_pg": "races"
+          }
+        ],
+        "sqlite_rows": 23179
+      }
+    },
+    "student_club": {
+      "event": {
+        "sqlite_name": "event",
+        "columns": [
+          {
+            "name": "event_id",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "event_name",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "event_date",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "type",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "notes",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "location",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "status",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "event_id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_17055_sqlite_autoindex_event_1",
+            "definition": "CREATE UNIQUE INDEX idx_17055_sqlite_autoindex_event_1 ON public.event USING btree (event_id)"
+          }
+        ],
+        "pg_foreign_keys": [],
+        "pg_rows": 42,
+        "sqlite_pk": [
+          "event_id"
+        ],
+        "foreign_keys": [],
+        "sqlite_rows": 42
+      },
+      "major": {
+        "sqlite_name": "major",
+        "columns": [
+          {
+            "name": "major_id",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "major_name",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "department",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "college",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "major_id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_17060_sqlite_autoindex_major_1",
+            "definition": "CREATE UNIQUE INDEX idx_17060_sqlite_autoindex_major_1 ON public.major USING btree (major_id)"
+          }
+        ],
+        "pg_foreign_keys": [],
+        "pg_rows": 113,
+        "sqlite_pk": [
+          "major_id"
+        ],
+        "foreign_keys": [],
+        "sqlite_rows": 113
+      },
+      "zip_code": {
+        "sqlite_name": "zip_code",
+        "columns": [
+          {
+            "name": "zip_code",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "type",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "city",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "county",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "state",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "short_state",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "zip_code"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_17065_zip_code_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_17065_zip_code_pkey ON public.zip_code USING btree (zip_code)"
+          }
+        ],
+        "pg_foreign_keys": [],
+        "pg_rows": 41877,
+        "sqlite_pk": [
+          "zip_code"
+        ],
+        "foreign_keys": [],
+        "sqlite_rows": 41877
+      },
+      "attendance": {
+        "sqlite_name": "attendance",
+        "columns": [
+          {
+            "name": "link_to_event",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "link_to_member",
+            "type": "text",
+            "nullable": false
+          }
+        ],
+        "pg_primary_key": [
+          "link_to_event",
+          "link_to_member"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_17070_sqlite_autoindex_attendance_1",
+            "definition": "CREATE UNIQUE INDEX idx_17070_sqlite_autoindex_attendance_1 ON public.attendance USING btree (link_to_event, link_to_member)"
+          }
+        ],
+        "pg_foreign_keys": [
+          {
+            "column": "link_to_event",
+            "ref_table": "event",
+            "ref_column": "event_id"
+          },
+          {
+            "column": "link_to_member",
+            "ref_table": "member",
+            "ref_column": "member_id"
+          }
+        ],
+        "pg_rows": 326,
+        "sqlite_pk": [
+          "link_to_event",
+          "link_to_member"
+        ],
+        "foreign_keys": [
+          {
+            "column": "link_to_member",
+            "ref_table": "member",
+            "ref_column": "member_id",
+            "ref_table_pg": "member"
+          },
+          {
+            "column": "link_to_event",
+            "ref_table": "event",
+            "ref_column": "event_id",
+            "ref_table_pg": "event"
+          }
+        ],
+        "sqlite_rows": 326
+      },
+      "budget": {
+        "sqlite_name": "budget",
+        "columns": [
+          {
+            "name": "budget_id",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "category",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "spent",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "remaining",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "amount",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "event_status",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "link_to_event",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "budget_id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_17075_sqlite_autoindex_budget_1",
+            "definition": "CREATE UNIQUE INDEX idx_17075_sqlite_autoindex_budget_1 ON public.budget USING btree (budget_id)"
+          }
+        ],
+        "pg_foreign_keys": [
+          {
+            "column": "link_to_event",
+            "ref_table": "event",
+            "ref_column": "event_id"
+          }
+        ],
+        "pg_rows": 52,
+        "sqlite_pk": [
+          "budget_id"
+        ],
+        "foreign_keys": [
+          {
+            "column": "link_to_event",
+            "ref_table": "event",
+            "ref_column": "event_id",
+            "ref_table_pg": "event"
+          }
+        ],
+        "sqlite_rows": 52
+      },
+      "expense": {
+        "sqlite_name": "expense",
+        "columns": [
+          {
+            "name": "expense_id",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "expense_description",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "expense_date",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "cost",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "approved",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "link_to_member",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "link_to_budget",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "expense_id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_17080_sqlite_autoindex_expense_1",
+            "definition": "CREATE UNIQUE INDEX idx_17080_sqlite_autoindex_expense_1 ON public.expense USING btree (expense_id)"
+          }
+        ],
+        "pg_foreign_keys": [
+          {
+            "column": "link_to_budget",
+            "ref_table": "budget",
+            "ref_column": "budget_id"
+          },
+          {
+            "column": "link_to_member",
+            "ref_table": "member",
+            "ref_column": "member_id"
+          }
+        ],
+        "pg_rows": 32,
+        "sqlite_pk": [
+          "expense_id"
+        ],
+        "foreign_keys": [
+          {
+            "column": "link_to_member",
+            "ref_table": "member",
+            "ref_column": "member_id",
+            "ref_table_pg": "member"
+          },
+          {
+            "column": "link_to_budget",
+            "ref_table": "budget",
+            "ref_column": "budget_id",
+            "ref_table_pg": "budget"
+          }
+        ],
+        "sqlite_rows": 32
+      },
+      "income": {
+        "sqlite_name": "income",
+        "columns": [
+          {
+            "name": "income_id",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "date_received",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "amount",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "source",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "notes",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "link_to_member",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "income_id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_17085_sqlite_autoindex_income_1",
+            "definition": "CREATE UNIQUE INDEX idx_17085_sqlite_autoindex_income_1 ON public.income USING btree (income_id)"
+          }
+        ],
+        "pg_foreign_keys": [
+          {
+            "column": "link_to_member",
+            "ref_table": "member",
+            "ref_column": "member_id"
+          }
+        ],
+        "pg_rows": 36,
+        "sqlite_pk": [
+          "income_id"
+        ],
+        "foreign_keys": [
+          {
+            "column": "link_to_member",
+            "ref_table": "member",
+            "ref_column": "member_id",
+            "ref_table_pg": "member"
+          }
+        ],
+        "sqlite_rows": 36
+      },
+      "member": {
+        "sqlite_name": "member",
+        "columns": [
+          {
+            "name": "member_id",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "first_name",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "last_name",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "email",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "position",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "t_shirt_size",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "phone",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "zip",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "link_to_major",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "member_id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_17090_sqlite_autoindex_member_1",
+            "definition": "CREATE UNIQUE INDEX idx_17090_sqlite_autoindex_member_1 ON public.member USING btree (member_id)"
+          }
+        ],
+        "pg_foreign_keys": [
+          {
+            "column": "link_to_major",
+            "ref_table": "major",
+            "ref_column": "major_id"
+          },
+          {
+            "column": "zip",
+            "ref_table": "zip_code",
+            "ref_column": "zip_code"
+          }
+        ],
+        "pg_rows": 33,
+        "sqlite_pk": [
+          "member_id"
+        ],
+        "foreign_keys": [
+          {
+            "column": "zip",
+            "ref_table": "zip_code",
+            "ref_column": "zip_code",
+            "ref_table_pg": "zip_code"
+          },
+          {
+            "column": "link_to_major",
+            "ref_table": "major",
+            "ref_column": "major_id",
+            "ref_table_pg": "major"
+          }
+        ],
+        "sqlite_rows": 33
+      }
+    },
+    "superhero": {
+      "alignment": {
+        "sqlite_name": "alignment",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "alignment",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_16745_alignment_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_16745_alignment_pkey ON public.alignment USING btree (id)"
+          }
+        ],
+        "pg_foreign_keys": [],
+        "pg_rows": 4,
+        "sqlite_pk": [
+          "id"
+        ],
+        "foreign_keys": [],
+        "sqlite_rows": 4
+      },
+      "attribute": {
+        "sqlite_name": "attribute",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "attribute_name",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_16750_attribute_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_16750_attribute_pkey ON public.attribute USING btree (id)"
+          }
+        ],
+        "pg_foreign_keys": [],
+        "pg_rows": 6,
+        "sqlite_pk": [
+          "id"
+        ],
+        "foreign_keys": [],
+        "sqlite_rows": 6
+      },
+      "colour": {
+        "sqlite_name": "colour",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "colour",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_16755_colour_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_16755_colour_pkey ON public.colour USING btree (id)"
+          }
+        ],
+        "pg_foreign_keys": [],
+        "pg_rows": 35,
+        "sqlite_pk": [
+          "id"
+        ],
+        "foreign_keys": [],
+        "sqlite_rows": 35
+      },
+      "gender": {
+        "sqlite_name": "gender",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "gender",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_16760_gender_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_16760_gender_pkey ON public.gender USING btree (id)"
+          }
+        ],
+        "pg_foreign_keys": [],
+        "pg_rows": 3,
+        "sqlite_pk": [
+          "id"
+        ],
+        "foreign_keys": [],
+        "sqlite_rows": 3
+      },
+      "publisher": {
+        "sqlite_name": "publisher",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "publisher_name",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_16765_publisher_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_16765_publisher_pkey ON public.publisher USING btree (id)"
+          }
+        ],
+        "pg_foreign_keys": [],
+        "pg_rows": 25,
+        "sqlite_pk": [
+          "id"
+        ],
+        "foreign_keys": [],
+        "sqlite_rows": 25
+      },
+      "race": {
+        "sqlite_name": "race",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "race",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_16770_race_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_16770_race_pkey ON public.race USING btree (id)"
+          }
+        ],
+        "pg_foreign_keys": [],
+        "pg_rows": 61,
+        "sqlite_pk": [
+          "id"
+        ],
+        "foreign_keys": [],
+        "sqlite_rows": 61
+      },
+      "superhero": {
+        "sqlite_name": "superhero",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "superhero_name",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "full_name",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "gender_id",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "eye_colour_id",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "hair_colour_id",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "skin_colour_id",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "race_id",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "publisher_id",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "alignment_id",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "height_cm",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "weight_kg",
+            "type": "bigint",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_16775_superhero_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_16775_superhero_pkey ON public.superhero USING btree (id)"
+          }
+        ],
+        "pg_foreign_keys": [
+          {
+            "column": "alignment_id",
+            "ref_table": "alignment",
+            "ref_column": "id"
+          },
+          {
+            "column": "eye_colour_id",
+            "ref_table": "colour",
+            "ref_column": "id"
+          },
+          {
+            "column": "gender_id",
+            "ref_table": "gender",
+            "ref_column": "id"
+          },
+          {
+            "column": "hair_colour_id",
+            "ref_table": "colour",
+            "ref_column": "id"
+          },
+          {
+            "column": "publisher_id",
+            "ref_table": "publisher",
+            "ref_column": "id"
+          },
+          {
+            "column": "race_id",
+            "ref_table": "race",
+            "ref_column": "id"
+          },
+          {
+            "column": "skin_colour_id",
+            "ref_table": "colour",
+            "ref_column": "id"
+          }
+        ],
+        "pg_rows": 750,
+        "sqlite_pk": [
+          "id"
+        ],
+        "foreign_keys": [
+          {
+            "column": "skin_colour_id",
+            "ref_table": "colour",
+            "ref_column": "id",
+            "ref_table_pg": "colour"
+          },
+          {
+            "column": "race_id",
+            "ref_table": "race",
+            "ref_column": "id",
+            "ref_table_pg": "race"
+          },
+          {
+            "column": "publisher_id",
+            "ref_table": "publisher",
+            "ref_column": "id",
+            "ref_table_pg": "publisher"
+          },
+          {
+            "column": "hair_colour_id",
+            "ref_table": "colour",
+            "ref_column": "id",
+            "ref_table_pg": "colour"
+          },
+          {
+            "column": "gender_id",
+            "ref_table": "gender",
+            "ref_column": "id",
+            "ref_table_pg": "gender"
+          },
+          {
+            "column": "eye_colour_id",
+            "ref_table": "colour",
+            "ref_column": "id",
+            "ref_table_pg": "colour"
+          },
+          {
+            "column": "alignment_id",
+            "ref_table": "alignment",
+            "ref_column": "id",
+            "ref_table_pg": "alignment"
+          }
+        ],
+        "sqlite_rows": 750
+      },
+      "hero_attribute": {
+        "sqlite_name": "hero_attribute",
+        "columns": [
+          {
+            "name": "hero_id",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "attribute_id",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "attribute_value",
+            "type": "bigint",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [],
+        "pg_indexes": [],
+        "pg_foreign_keys": [
+          {
+            "column": "attribute_id",
+            "ref_table": "attribute",
+            "ref_column": "id"
+          },
+          {
+            "column": "hero_id",
+            "ref_table": "superhero",
+            "ref_column": "id"
+          }
+        ],
+        "pg_rows": 3738,
+        "sqlite_pk": [],
+        "foreign_keys": [
+          {
+            "column": "hero_id",
+            "ref_table": "superhero",
+            "ref_column": "id",
+            "ref_table_pg": "superhero"
+          },
+          {
+            "column": "attribute_id",
+            "ref_table": "attribute",
+            "ref_column": "id",
+            "ref_table_pg": "attribute"
+          }
+        ],
+        "sqlite_rows": 3738
+      },
+      "superpower": {
+        "sqlite_name": "superpower",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "power_name",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_16783_superpower_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_16783_superpower_pkey ON public.superpower USING btree (id)"
+          }
+        ],
+        "pg_foreign_keys": [],
+        "pg_rows": 167,
+        "sqlite_pk": [
+          "id"
+        ],
+        "foreign_keys": [],
+        "sqlite_rows": 167
+      },
+      "hero_power": {
+        "sqlite_name": "hero_power",
+        "columns": [
+          {
+            "name": "hero_id",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "power_id",
+            "type": "bigint",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [],
+        "pg_indexes": [],
+        "pg_foreign_keys": [
+          {
+            "column": "hero_id",
+            "ref_table": "superhero",
+            "ref_column": "id"
+          },
+          {
+            "column": "power_id",
+            "ref_table": "superpower",
+            "ref_column": "id"
+          }
+        ],
+        "pg_rows": 5825,
+        "sqlite_pk": [],
+        "foreign_keys": [
+          {
+            "column": "power_id",
+            "ref_table": "superpower",
+            "ref_column": "id",
+            "ref_table_pg": "superpower"
+          },
+          {
+            "column": "hero_id",
+            "ref_table": "superhero",
+            "ref_column": "id",
+            "ref_table_pg": "superhero"
+          }
+        ],
+        "sqlite_rows": 5825
+      }
+    },
+    "thrombosis_prediction": {
+      "examination": {
+        "sqlite_name": "Examination",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "Examination Date",
+            "type": "date",
+            "nullable": true
+          },
+          {
+            "name": "aCL IgG",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "aCL IgM",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "ana",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "ANA Pattern",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "aCL IgA",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "diagnosis",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "kct",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "rvvt",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "lac",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "symptoms",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "thrombosis",
+            "type": "bigint",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [],
+        "pg_indexes": [],
+        "pg_foreign_keys": [
+          {
+            "column": "id",
+            "ref_table": "patient",
+            "ref_column": "id"
+          }
+        ],
+        "pg_rows": 106,
+        "sqlite_pk": [],
+        "foreign_keys": [
+          {
+            "column": "ID",
+            "ref_table": "Patient",
+            "ref_column": "ID",
+            "ref_table_pg": "patient"
+          }
+        ],
+        "sqlite_rows": 106
+      },
+      "patient": {
+        "sqlite_name": "Patient",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "name": "sex",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "birthday",
+            "type": "date",
+            "nullable": true
+          },
+          {
+            "name": "description",
+            "type": "date",
+            "nullable": true
+          },
+          {
+            "name": "First Date",
+            "type": "date",
+            "nullable": true
+          },
+          {
+            "name": "admission",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "diagnosis",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_16904_patient_pkey",
+            "definition": "CREATE UNIQUE INDEX idx_16904_patient_pkey ON public.patient USING btree (id)"
+          }
+        ],
+        "pg_foreign_keys": [],
+        "pg_rows": 1238,
+        "sqlite_pk": [
+          "ID"
+        ],
+        "foreign_keys": [],
+        "sqlite_rows": 1238
+      },
+      "laboratory": {
+        "sqlite_name": "Laboratory",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "date",
+            "type": "date",
+            "nullable": true
+          },
+          {
+            "name": "got",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "gpt",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "ldh",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "alp",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "tp",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "alb",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "ua",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "un",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "cre",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "T-BIL",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "T-CHO",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "tg",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "cpk",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "glu",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "wbc",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "rbc",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "hgb",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "hct",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "plt",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "pt",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "aptt",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "fg",
+            "type": "real",
+            "nullable": true
+          },
+          {
+            "name": "pic",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "tat",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "tat2",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "U-PRO",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "igg",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "iga",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "igm",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "crp",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "ra",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "rf",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "c3",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "c4",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "rnp",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "sm",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "sc170",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "ssa",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "ssb",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "centromea",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "dna",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "DNA-II",
+            "type": "bigint",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [],
+        "pg_indexes": [
+          {
+            "name": "idx_16910_sqlite_autoindex_laboratory_1",
+            "definition": "CREATE UNIQUE INDEX idx_16910_sqlite_autoindex_laboratory_1 ON public.laboratory USING btree (id, date)"
+          }
+        ],
+        "pg_foreign_keys": [
+          {
+            "column": "id",
+            "ref_table": "patient",
+            "ref_column": "id"
+          }
+        ],
+        "pg_rows": 13908,
+        "sqlite_pk": [
+          "ID",
+          "Date"
+        ],
+        "foreign_keys": [
+          {
+            "column": "ID",
+            "ref_table": "Patient",
+            "ref_column": "ID",
+            "ref_table_pg": "patient"
+          }
+        ],
+        "sqlite_rows": 13908
+      }
+    },
+    "toxicology": {
+      "atom": {
+        "sqlite_name": "atom",
+        "columns": [
+          {
+            "name": "atom_id",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "molecule_id",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "element",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "atom_id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_16953_sqlite_autoindex_atom_1",
+            "definition": "CREATE UNIQUE INDEX idx_16953_sqlite_autoindex_atom_1 ON public.atom USING btree (atom_id)"
+          }
+        ],
+        "pg_foreign_keys": [
+          {
+            "column": "molecule_id",
+            "ref_table": "molecule",
+            "ref_column": "molecule_id"
+          }
+        ],
+        "pg_rows": 9111,
+        "sqlite_pk": [
+          "atom_id"
+        ],
+        "foreign_keys": [
+          {
+            "column": "molecule_id",
+            "ref_table": "molecule",
+            "ref_column": "molecule_id",
+            "ref_table_pg": "molecule"
+          }
+        ],
+        "sqlite_rows": 9111
+      },
+      "bond": {
+        "sqlite_name": "bond",
+        "columns": [
+          {
+            "name": "bond_id",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "molecule_id",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "bond_type",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "bond_id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_16958_sqlite_autoindex_bond_1",
+            "definition": "CREATE UNIQUE INDEX idx_16958_sqlite_autoindex_bond_1 ON public.bond USING btree (bond_id)"
+          }
+        ],
+        "pg_foreign_keys": [
+          {
+            "column": "molecule_id",
+            "ref_table": "molecule",
+            "ref_column": "molecule_id"
+          }
+        ],
+        "pg_rows": 9156,
+        "sqlite_pk": [
+          "bond_id"
+        ],
+        "foreign_keys": [
+          {
+            "column": "molecule_id",
+            "ref_table": "molecule",
+            "ref_column": "molecule_id",
+            "ref_table_pg": "molecule"
+          }
+        ],
+        "sqlite_rows": 9156
+      },
+      "connected": {
+        "sqlite_name": "connected",
+        "columns": [
+          {
+            "name": "atom_id",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "atom_id2",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "bond_id",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "atom_id",
+          "atom_id2"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_16963_sqlite_autoindex_connected_1",
+            "definition": "CREATE UNIQUE INDEX idx_16963_sqlite_autoindex_connected_1 ON public.connected USING btree (atom_id, atom_id2)"
+          }
+        ],
+        "pg_foreign_keys": [
+          {
+            "column": "atom_id2",
+            "ref_table": "atom",
+            "ref_column": "atom_id"
+          },
+          {
+            "column": "atom_id",
+            "ref_table": "atom",
+            "ref_column": "atom_id"
+          },
+          {
+            "column": "bond_id",
+            "ref_table": "bond",
+            "ref_column": "bond_id"
+          }
+        ],
+        "pg_rows": 18312,
+        "sqlite_pk": [
+          "atom_id",
+          "atom_id2"
+        ],
+        "foreign_keys": [
+          {
+            "column": "bond_id",
+            "ref_table": "bond",
+            "ref_column": "bond_id",
+            "ref_table_pg": "bond"
+          },
+          {
+            "column": "atom_id2",
+            "ref_table": "atom",
+            "ref_column": "atom_id",
+            "ref_table_pg": "atom"
+          },
+          {
+            "column": "atom_id",
+            "ref_table": "atom",
+            "ref_column": "atom_id",
+            "ref_table_pg": "atom"
+          }
+        ],
+        "sqlite_rows": 18312
+      },
+      "molecule": {
+        "sqlite_name": "molecule",
+        "columns": [
+          {
+            "name": "molecule_id",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "label",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "pg_primary_key": [
+          "molecule_id"
+        ],
+        "pg_indexes": [
+          {
+            "name": "idx_16968_sqlite_autoindex_molecule_1",
+            "definition": "CREATE UNIQUE INDEX idx_16968_sqlite_autoindex_molecule_1 ON public.molecule USING btree (molecule_id)"
+          }
+        ],
+        "pg_foreign_keys": [],
+        "pg_rows": 343,
+        "sqlite_pk": [
+          "molecule_id"
+        ],
+        "foreign_keys": [],
+        "sqlite_rows": 343
+      }
+    }
+  }
+}

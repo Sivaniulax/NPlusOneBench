@@ -1,0 +1,10 @@
+[
+  {"id": "qwen2.5-coder-1.5b", "name": "Qwen2.5-Coder 1.5B", "size": "1.5B", "provider": "ollama",
+   "model": "qwen2.5-coder:1.5b", "base_url": "http://localhost:11434/v1"},
+  {"id": "qwen2.5-coder-3b", "name": "Qwen2.5-Coder 3B", "size": "3B", "provider": "ollama",
+   "model": "qwen2.5-coder:3b", "base_url": "http://localhost:11434/v1"},
+  {"id": "llama-3.3-70b", "name": "Llama 3.3 70B", "size": "70B", "provider": "groq",
+   "model": "llama-3.3-70b-versatile", "base_url": "https://api.groq.com/openai/v1", "key_env": "GROQ_API_KEY"},
+  {"id": "gemini-2.5-flash", "name": "Gemini 2.5 Flash", "provider": "google",
+   "model": "gemini-2.5-flash", "base_url": "https://generativelanguage.googleapis.com/v1beta/openai", "key_env": "GEMINI_API_KEY"}
+]

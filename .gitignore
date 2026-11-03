@@ -1,0 +1,14 @@
+# downloads, re-created by scripts/01_download.sh
+data/raw/
+*.zip
+
+# generated
+data/processed/load_log.txt
+data/processed/gold_review.csv
+data/hf/
+
+.venv/
+__pycache__/
+harness/vendor/
+harness/.bundle/
+.env

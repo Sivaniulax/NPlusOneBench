@@ -1,0 +1,6 @@
+{
+  "788": {
+    "note": "Postgres gold computed the share of female heroes that are Marvel. The evidence and the SQLite gold want the share of Marvel heroes that are female.",
+    "sql": "SELECT CAST(COUNT(CASE WHEN T3.gender = 'Female' AND T2.publisher_name = 'Marvel Comics' THEN 1 ELSE NULL END) AS REAL) * 100 / NULLIF(COUNT(CASE WHEN T2.publisher_name = 'Marvel Comics' THEN 1 ELSE NULL END), 0) FROM superhero AS T1 INNER JOIN publisher AS T2 ON T1.publisher_id = T2.id INNER JOIN gender AS T3 ON T1.gender_id = T3.id"
+  }
+}

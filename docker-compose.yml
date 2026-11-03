@@ -1,0 +1,39 @@
+# docker compose up --build    -> data pipeline + scoring of the cached model answers
+# docker compose --profile llm up --build    -> also starts Ollama for new runs
+services:
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: bench
+      POSTGRES_PASSWORD: bench
+    command: postgres -c timezone=Asia/Shanghai -c shared_buffers=512MB
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: pg_isready -U bench
+      interval: 2s
+      retries: 30
+
+  bench:
+    build: .
+    environment:
+      PGHOST: db
+      PGUSER: bench
+      PGPASSWORD: bench
+      OLLAMA_HOST: http://ollama:11434
+    volumes:
+      - .:/app
+    depends_on:
+      db:
+        condition: service_healthy
+    command: bash scripts/reproduce.sh
+
+  ollama:
+    image: ollama/ollama:0.12.6
+    profiles: [llm]
+    volumes:
+      - ollama:/root/.ollama
+
+volumes:
+  pgdata:
+  ollama:
